@@ -85,6 +85,7 @@ export default class NetsuiteApiClient {
       headers: this.getAuthorizationHeader(uri, method),
       throwHttpErrors: true,
       decompress: true,
+      retry: { limit: 0 },
     } as OptionsOfTextResponseBody;
 
     if (Object.keys(heads).length > 0) {
