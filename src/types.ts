@@ -1,3 +1,5 @@
+import type { Timings } from "@szmarczak/http-timer";
+
 export type NetsuiteOptions = {
   consumer_key: string;
   consumer_secret_key: string;
@@ -18,6 +20,7 @@ export type NetsuiteResponse = {
   statusCode: number;
   headers: NodeJS.Dict<string | string[]>;
   data: any;
+  timings?: Timings;
 };
 
 export type NetsuiteQueryResult = {

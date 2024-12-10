@@ -85,6 +85,8 @@ export default class NetsuiteApiClient {
       headers: this.getAuthorizationHeader(uri, method),
       throwHttpErrors: true,
       decompress: true,
+      retry: { limit: 0 },
+      timeout: {request: 1000 }
     } as OptionsOfTextResponseBody;
 
     if (Object.keys(heads).length > 0) {
@@ -95,11 +97,13 @@ export default class NetsuiteApiClient {
       options.headers!.prefer = "transient";
     }
     try {
-      const response = await got(uri, options);
+      //      const { response, timings }  = await got(uri, options);
+      const response  = await got(uri, options);
       return {
         ...response,
         headers: response.headers,
         data: response.body ? JSON.parse(response.body) : null,
+	timings: response.timings, 
       } as NetsuiteResponse;
     } catch (e) {
       if (e instanceof HTTPError) {
