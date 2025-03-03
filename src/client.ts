@@ -9,6 +9,7 @@ import {
   NetsuiteResponse,
 } from "./types.js";
 import { NetsuiteError } from "./errors.js";
+import {removeLeadingSlash, removeTrailingSlash} from "./utils.js";
 
 export default class NetsuiteApiClient {
   consumer_key: string;
@@ -28,15 +29,16 @@ export default class NetsuiteApiClient {
     this.version = "1.0";
     this.algorithm = "HMAC-SHA256";
     this.realm = options.realm;
-    this.base_url = options.base_url;
+    this.base_url = options.base_url ? removeTrailingSlash(options.base_url) : undefined;
   }
 
   /**
    * Retrieve the Authorization Header
-   * @param options
    * @returns
+   * @param url
+   * @param method
    */
-  getAuthorizationHeader(url: string, method: string) {
+  getAuthorizationHeader(url: string, method: string): { [key: string]: string } {
     const oauth = new OAuth({
       consumer: {
         key: this.consumer_key,
@@ -68,16 +70,20 @@ export default class NetsuiteApiClient {
    * @returns
    */
   public async request(opts: NetsuiteRequestOptions) {
-    const { path = "*", method = "GET", body = "", heads = {} } = opts;
+    const { path = "*", method = "GET", body = "", heads = {}, restletUrl } = opts;
+    const cleanPath = removeLeadingSlash(path);
+    // Set up the Request URI
 
-    // Setup the Request URI
-    let uri;
-    if (this.base_url) uri = `${this.base_url}/services/rest/${path}`;
-    else {
-      // as suggested by dylbarne in #15: sanitize url to enhance overall usability
-      uri = `https://${this.realm
+    // as suggested by dylbarne in #15: sanitize url to enhance overall usability
+    let uri = `https://${this.realm
         .toLowerCase()
-        .replace("_", "-")}.suitetalk.api.netsuite.com/services/rest/${path}`;
+        .replace("_", "-")}.suitetalk.api.netsuite.com/services/rest/${cleanPath}`;
+    if (this.base_url) {
+        uri = `${this.base_url}/services/rest/${cleanPath}`
+    }
+    // if restletUrl is provided, use it instead of the default uri
+    if (restletUrl) {
+      uri = restletUrl;
     }
 
     const options = {

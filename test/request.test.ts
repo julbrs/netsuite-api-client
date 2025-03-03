@@ -1,5 +1,5 @@
 import "dotenv/config";
-import NetsuiteApiClient from "../src/client";
+import NetsuiteApiClient from "../src/client.js";
 import { describe, expect, test, beforeAll, afterAll, it } from "vitest";
 
 describe("Test request method", () => {
@@ -14,6 +14,7 @@ describe("Test request method", () => {
       process.env.token_secret == undefined ||
       process.env.realm == undefined ||
       process.env.base_url == undefined
+      // || process.env.restlet_url == undefined
     ) {
       throw new Error("Please create a `.env` file based on `.env.sample`");
     }
@@ -44,6 +45,18 @@ describe("Test request method", () => {
     });
     expect(response.statusCode).toEqual(204);
   });
+
+  // it('should make a RESTlet request', async () => {
+  //   expect.assertions(1);
+  //   const response = await client.request({
+  //     method: 'GET',
+  //     restletUrl: process.env.restlet_url,
+  //     heads: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   })
+  //   expect(response.statusCode).toEqual(200);
+  // })
 
   it("should make GET request - GET Customers", async () => {
     expect.assertions(4);

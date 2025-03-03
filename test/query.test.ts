@@ -1,5 +1,5 @@
 import "dotenv/config";
-import NetsuiteApiClient from "../src/client";
+import NetsuiteApiClient from "../src/client.js";
 import { beforeAll, describe, expect, it } from "vitest";
 
 let client: NetsuiteApiClient;
