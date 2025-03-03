@@ -28,10 +28,10 @@
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",
     "@types/got": "^9.6.12",
-    "@vitest/coverage-v8": "^2.0.0",
+    "@vitest/coverage-v8": "^3.0.0",
     "dotenv": "^16.3.1",
     "typescript": "^5.2.2",
-    "vitest": "^2.0.0"
+    "vitest": "^3.0.0"
   },
   "dependencies": {
     "got": "^14.0.0",
