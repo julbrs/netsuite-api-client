@@ -126,7 +126,7 @@ describe("Test request method", () => {
 
   it("should reject with meaningful error if bad url", async () => {
     expect.assertions(1);
-    expect(() =>
+    await expect(() =>
       client.request({
         path: "record/v1/bad-path",
       })
@@ -135,7 +135,7 @@ describe("Test request method", () => {
 
   it("should reject with meaningful error if bad object", async () => {
     expect.assertions(1);
-    expect(() =>
+    await expect(() =>
       client.request({
         path: "record/v1/customer/-1",
       })
@@ -146,7 +146,7 @@ describe("Test request method", () => {
 
   it("should reject with meaningful error if bad request (wrong body)", async () => {
     expect.assertions(1);
-    expect(() =>
+    await expect(() =>
       client.request({
         method: "post",
         path: "record/v1/customer",
@@ -157,7 +157,7 @@ describe("Test request method", () => {
 
   it("should reject with meaningful error if bad request (missing fields)", async () => {
     expect.assertions(1);
-    expect(() =>
+    await expect(() =>
       client.request({
         method: "post",
         path: "record/v1/customer",
