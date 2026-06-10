@@ -34,7 +34,7 @@
     "vitest": "^3.0.0"
   },
   "dependencies": {
-    "got": "^14.0.0",
+    "got": "^15.0.0",
     "oauth-1.0a": "^2.2.6"
   },
   "repository": {
