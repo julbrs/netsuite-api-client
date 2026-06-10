@@ -34,6 +34,15 @@ const client = new NetsuiteApiClient({
 
 ## request
 
+`request` accepts the following options:
+
+- `path` (optional): REST path under `/services/rest/`.
+- `restletUrl` (optional): full URL for RESTlet calls (bypasses `path` URL building).
+- `method` (optional): HTTP method, defaults to `GET`.
+- `body` (optional): request body as a string.
+- `heads` (optional): additional headers.
+- `overrides` (optional): raw `got` request options (`OptionsOfTextResponseBody`) merged into the internal defaults.
+
 ### Test
 
 ```ts
@@ -56,6 +65,20 @@ client
   .then((response) => response.data)
   .then((data) => console.log(data.links))
   .catch((err) => console.log(err));
+```
+
+### Override got options
+
+Use `overrides` when you need to pass advanced `got` options (for example timeout/retry).
+
+```ts
+client.request({
+  path: "record/v1/customer/",
+  overrides: {
+    timeout: { request: 15000 },
+    retry: { limit: 0 },
+  },
+});
 ```
 
 ## query
