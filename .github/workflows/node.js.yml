@@ -14,23 +14,19 @@ env:
 
 jobs:
   test:
-    name: Node ${{ matrix.node }}
+    name: Node 24
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node: [20]
 
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v6
         with:
-          version: 9
+          version: 10
 
       - name: Set Node.js version
         uses: actions/setup-node@v6
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 24
           cache: "pnpm"
 
       - name: Install dependencies
