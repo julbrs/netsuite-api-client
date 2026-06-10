@@ -16,25 +16,25 @@
   "homepage": "https://github.com/julbrs/netsuite-api-client#readme",
   "bugs": "https://github.com/julbrs/netsuite-api-client/issues",
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/src/index.js"
   },
-  "types": "dist/index.d.ts",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "tsc --build --clean && tsc",
     "test": "vitest",
     "coverage": "vitest --coverage",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.4",
+    "@tsconfig/node22": "^22.0.0",
     "@types/got": "^9.6.12",
     "@vitest/coverage-v8": "^3.0.0",
-    "dotenv": "^16.3.1",
-    "typescript": "^5.2.2",
+    "dotenv": "^17.0.0",
+    "typescript": "^6.0.0",
     "vitest": "^3.0.0"
   },
   "dependencies": {
-    "got": "^14.0.0",
+    "got": "^15.0.0",
     "oauth-1.0a": "^2.2.6"
   },
   "repository": {
