@@ -25,8 +25,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.7(vitest@3.0.7(@types/node@22.8.0))
       dotenv:
-        specifier: ^16.3.1
-        version: 16.4.7
+        specifier: ^17.0.0
+        version: 17.4.2
       typescript:
         specifier: ^6.0.0
         version: 6.0.3
@@ -493,8 +493,8 @@ packages:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
 
-  dotenv@16.4.7:
-    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
+  dotenv@17.4.2:
+    resolution: {integrity: sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw==}
     engines: {node: '>=12'}
 
   eastasianwidth@0.2.0:
@@ -1208,7 +1208,7 @@ snapshots:
 
   delayed-stream@1.0.0: {}
 
-  dotenv@16.4.7: {}
+  dotenv@17.4.2: {}
 
   eastasianwidth@0.2.0: {}
 
