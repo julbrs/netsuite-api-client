@@ -192,7 +192,7 @@ git push --tags
 4. Publish to npm.
 
 ```bash
-pnpm publish --access public
+pnpm publish
 ```
 
 `prepublishOnly` runs `pnpm build` automatically before publishing.
