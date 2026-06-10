@@ -22,8 +22,8 @@ jobs:
         node: [20]
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
         with:
           version: 9
 
@@ -36,5 +36,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run tests
+      - name: Run build
+        run: pnpm build
+
+      - name: Run coverage
         run: pnpm coverage
