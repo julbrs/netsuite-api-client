@@ -165,3 +165,34 @@ You can navigate to the referenced resources without deeper knowledge of the sys
 ### Netsuite Rest API Browser
 
 [REST API Browser](https://system.netsuite.com/help/helpcenter/en_US/APIs/REST_API_Browser/record/v1/2021.2/index.html) provides a visual overview of the structure and capabilities of the REST web services Record API. The data presented in the REST API Browser is based on OpenAPI 3.0 metadata.
+
+## Release a new version to npm
+
+1. Make sure your branch is up to date and tests pass locally.
+
+```bash
+pnpm install
+pnpm build
+pnpm test
+```
+
+2. Bump the package version (pick one: `patch`, `minor`, or `major`).
+
+```bash
+pnpm version patch
+```
+
+3. Push the commit and tag created by `pnpm version`.
+
+```bash
+git push
+git push --tags
+```
+
+4. Publish to npm.
+
+```bash
+pnpm publish --access public
+```
+
+`prepublishOnly` runs `pnpm build` automatically before publishing.
