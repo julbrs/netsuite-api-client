@@ -70,7 +70,7 @@ export default class NetsuiteApiClient {
    * @returns
    */
   public async request(opts: NetsuiteRequestOptions) {
-    const { path = "*", method = "GET", body = "", heads = {}, restletUrl } = opts;
+    const { path = "*", method = "GET", body = "", heads = {}, restletUrl, overrides = {} } = opts;
     const cleanPath = removeLeadingSlash(path);
     // Set up the Request URI
 
@@ -91,6 +91,7 @@ export default class NetsuiteApiClient {
       headers: this.getAuthorizationHeader(uri, method),
       throwHttpErrors: true,
       decompress: true,
+      ...overrides,
     } as OptionsOfTextResponseBody;
 
     if (Object.keys(heads).length > 0) {

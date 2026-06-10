@@ -1,3 +1,4 @@
+import { OptionsOfTextResponseBody } from "got";
 import type {Buffer} from "node:buffer";
 import type {Readable} from "node:stream";
 
@@ -23,6 +24,10 @@ type BaseRequestOptions = {
      * Additional headers to send with the request
      */
     heads?: any;
+    /**
+     * These will override the options that are passed to the request library
+     */
+    overrides?: OptionsOfTextResponseBody
 };
 
 export type NetsuiteRequestOptions =
