@@ -1,6 +1,6 @@
 import "dotenv/config";
 import NetsuiteApiClient from "../src/client.js";
-import { describe, expect, test, beforeAll, afterAll, it } from "vitest";
+import { describe, expect, beforeAll, it } from "vitest";
 
 describe("Test request method", () => {
   let client: NetsuiteApiClient;
@@ -14,7 +14,6 @@ describe("Test request method", () => {
       process.env.token_secret == undefined ||
       process.env.realm == undefined ||
       process.env.base_url == undefined
-      // || process.env.restlet_url == undefined
     ) {
       throw new Error("Please create a `.env` file based on `.env.sample`");
     }
@@ -142,7 +141,7 @@ describe("Test request method", () => {
     await expect(() =>
       client.request({
         path: "record/v1/bad-path",
-      })
+      }),
     ).rejects.toThrowError("Record type 'bad-path' does not exist");
   });
 
@@ -151,9 +150,9 @@ describe("Test request method", () => {
     await expect(() =>
       client.request({
         path: "record/v1/customer/-1",
-      })
+      }),
     ).rejects.toThrowError(
-      "The record instance does not exist. Provide a valid record instance ID."
+      "The record instance does not exist. Provide a valid record instance ID.",
     );
   });
 
@@ -164,7 +163,7 @@ describe("Test request method", () => {
         method: "post",
         path: "record/v1/customer",
         body: "bad body",
-      })
+      }),
     ).rejects.toThrowError("Invalid content in the request body");
   });
 
@@ -175,7 +174,7 @@ describe("Test request method", () => {
         method: "post",
         path: "record/v1/customer",
         body: JSON.stringify({}),
-      })
+      }),
     ).rejects.toThrowError("Error while accessing a resource. Please enter value(s) for: ");
   });
 });
