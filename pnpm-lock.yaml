@@ -10,7 +10,7 @@ importers:
     dependencies:
       got:
         specifier: ^15.0.0
-        version: 15.0.5
+        version: 15.1.0
       oauth-1.0a:
         specifier: ^2.2.6
         version: 2.2.6
@@ -522,8 +522,8 @@ packages:
     resolution: {integrity: sha512-kVCxPF3vQM/N0B1PmoqVUqgHP+EeVjmZSQn+1oCRPxd2P21P2F19lIgbR3HBosbB1PUhOAoctJnfEn2GbN2eZA==}
     engines: {node: '>=18'}
 
-  got@15.0.5:
-    resolution: {integrity: sha512-PMIMaZuYUCK43+Z9JWEXea4kkX2b3301m81D5TS6QpfG4PmNyirzEdO/Oa2OHAN4GsjnPfvWCWsshKN2rq4/gQ==}
+  got@15.1.0:
+    resolution: {integrity: sha512-DG+DAAkRtno+oDr/GBsliAkhN9+zczOPM5qXk3efDZY3qvyRnZU+NwQlb/IOY6cSnxxTR9z3aHCcShJyjb0hJA==}
     engines: {node: '>=22'}
 
   has-flag@4.0.0:
@@ -1149,7 +1149,7 @@ snapshots:
       '@sec-ant/readable-stream': 0.4.1
       is-stream: 4.0.1
 
-  got@15.0.5:
+  got@15.1.0:
     dependencies:
       '@sindresorhus/is': 8.1.0
       byte-counter: 0.1.0
