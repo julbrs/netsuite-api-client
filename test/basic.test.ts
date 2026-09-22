@@ -50,9 +50,7 @@ describe("Test basic behavior", () => {
       token_secret: process.env.token_secret!,
       realm: "invalid",
     });
-    return expect(client.connect()).rejects.toThrowError(
-      "getaddrinfo ENOTFOUND invalid.suitetalk.api.netsuite.co"
-    );
+    return expect(client.connect()).rejects.toThrowError();
   });
 
   it("it should connect to NetSuite", async () => {

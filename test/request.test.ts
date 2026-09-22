@@ -151,8 +151,8 @@ describe("Test request method", () => {
       client.request({
         path: "record/v1/customer/-1",
       }),
-    ).rejects.toThrowError(
-      "The record instance does not exist. Provide a valid record instance ID.",
+    ).rejects.toThrow(
+      "The customer instance for ID '-1' does not exist. Provide a valid customer instance ID.",
     );
   });
 
