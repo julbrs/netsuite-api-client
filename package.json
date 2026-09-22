@@ -28,14 +28,14 @@
   "devDependencies": {
     "@tsconfig/node24": "^24.0.0",
     "@types/got": "^9.6.12",
-    "@types/node": "^26.6.2",
     "@vitest/coverage-v8": "^5.0.0",
     "dotenv": "^18.0.0",
     "typescript": "^7.0.0",
-    "vitest": "^5.0.0"
+    "vitest": "^5.0.0",
+    "@types/node": "^26.6.2"
   },
   "dependencies": {
-    "got": "^15.0.0",
+    "got": "^16.0.0",
     "oauth-1.0a": "^2.2.6"
   },
   "repository": {
