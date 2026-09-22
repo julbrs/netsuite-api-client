@@ -31,7 +31,8 @@
     "@vitest/coverage-v8": "^5.0.0",
     "dotenv": "^18.0.0",
     "typescript": "^7.0.0",
-    "vitest": "^5.0.0"
+    "vitest": "^5.0.0",
+    "@types/node": "^26.6.2"
   },
   "dependencies": {
     "got": "^16.0.0",
