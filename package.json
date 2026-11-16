@@ -26,7 +26,7 @@
     "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
-    "@tsconfig/node24": "^24.0.0",
+    "@tsconfig/node26": "^26.0.0",
     "@types/got": "^9.6.12",
     "@vitest/coverage-v8": "^5.0.0",
     "dotenv": "^18.0.0",

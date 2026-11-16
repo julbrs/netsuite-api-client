@@ -15,9 +15,9 @@ importers:
         specifier: ^2.2.6
         version: 2.2.6
     devDependencies:
-      '@tsconfig/node24':
-        specifier: ^24.0.0
-        version: 24.0.5
+      '@tsconfig/node26':
+        specifier: ^26.0.0
+        version: 26.0.2
       '@types/got':
         specifier: ^9.6.12
         version: 9.6.12
@@ -377,8 +377,8 @@ packages:
     resolution: {integrity: sha512-2SX/1jW6CIMAiebvVv5ZInoCEuWQmMyBoJXXGC6Vjakjp/fpxP5eHs7/V6WKuPEIbuK06+VpjH+vjLQhr98rDQ==}
     engines: {node: '>=22'}
 
-  '@tsconfig/node24@24.0.5':
-    resolution: {integrity: sha512-DWC54fGPuhZgg3Ighg4Y/A/bA3ZdB5hnzAuv/MkQ/X85sVsBsMQxu8t7khutdYeiNksBbFdDyeqv1HSW2Zl8aA==}
+  '@tsconfig/node26@26.0.2':
+    resolution: {integrity: sha512-RIBSoNGQxUQ8r4hSrEzS6TrUneoKaCuX6BjL4zF3wqttGq2w06zCea4d8P1gRvM/HZyDT1FQJ8trZSyy/63oMg==}
 
   '@types/chai@5.2.3':
     resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
@@ -1036,7 +1036,7 @@ snapshots:
 
   '@sindresorhus/is@8.1.0': {}
 
-  '@tsconfig/node24@24.0.5': {}
+  '@tsconfig/node26@26.0.2': {}
 
   '@types/chai@5.2.3':
     dependencies:
